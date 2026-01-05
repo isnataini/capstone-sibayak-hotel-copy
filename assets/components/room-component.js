@@ -16,13 +16,13 @@ class RoomComponent extends HTMLElement {
                 e.preventDefault();
                 const roomBox = button.closest('.room-box');
                 const roomName = roomBox.querySelector('h2').textContent;
-                const roomImage = roomBox.querySelector('img').src;
+                const roomimages = roomBox.querySelector('img').src;
                 const roomPrice = roomBox.querySelector('.price').textContent;
 
                 // Simpan data kamar ke localStorage
                 const roomData = {
                     name: roomName,
-                    image: roomImage,
+                    images: roomimages,
                     price: roomPrice
                 };
                 localStorage.setItem('selectedRoom', JSON.stringify(roomData));
@@ -110,7 +110,7 @@ class RoomComponent extends HTMLElement {
                 <div class="room-box">
                     <aside>
                         <figure>
-                            <img src="../assets/image/Twin Room.jpg" alt="Twin Room">
+                            <img src="assets/images/Twin Room.jpg" alt="Twin Room">
                         </figure>
                     </aside>
                     <article>
@@ -128,7 +128,7 @@ class RoomComponent extends HTMLElement {
                 <div class="room-box">
                     <aside>
                         <figure>
-                            <img src="../assets/image/Standard Room.jpg" alt="Deluxe Double Room">
+                            <img src="assets/images/Standard Room.jpg" alt="Deluxe Double Room">
                         </figure>
                     </aside>
                     <article>
@@ -146,7 +146,7 @@ class RoomComponent extends HTMLElement {
                 <div class="room-box">
                     <aside>
                         <figure>
-                            <img src="../assets/image/Promotion Room.jpg" alt="Promotion Room">
+                            <img src="assets/images/Promotion Room.jpg" alt="Promotion Room">
                         </figure>
                     </aside>
                     <article>
@@ -164,7 +164,7 @@ class RoomComponent extends HTMLElement {
                 <div class="room-box">
                     <aside>
                         <figure>
-                            <img src="../assets/image/Villa.jpg" alt="Villa House">
+                            <img src="assets/images/Villa.jpg" alt="Villa House">
                         </figure>
                     </aside>
                     <article>
