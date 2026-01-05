@@ -3,12 +3,12 @@ class HeroComponent extends HTMLElement {
         super();
         this.attachShadow({ mode: 'open' });
         this.images = [
-            '../assets/image/Homepage 2.jpg',
-            '../assets/image/Homepage 3.jpg',
-            '../assets/image/Homepage 4.jpg'
-            // Add more image paths here if needed
+            'assets/images/Homepage 2.jpg',
+            'assets/images/Homepage 3.jpg',
+            'assets/images/Homepage 4.jpg'
+            // Add more images paths here if needed
         ];
-        this.currentImageIndex = 0;
+        this.currentimagesIndex = 0;
     }
 
     connectedCallback() {
@@ -127,10 +127,10 @@ class HeroComponent extends HTMLElement {
 
         // Dynamically add images to the slider container
         const sliderContainer = this.shadowRoot.querySelector('.slider-container');
-        this.images.forEach(imagePath => {
+        this.images.forEach(imagesPath => {
             const img = document.createElement('img');
-            img.src = imagePath;
-            img.alt = "Hotel Image"; // Add a meaningful alt text
+            img.src = imagesPath;
+            img.alt = "Hotel images"; // Add a meaningful alt text
             sliderContainer.appendChild(img);
         });
     }
@@ -142,12 +142,12 @@ class HeroComponent extends HTMLElement {
         this.images.forEach((_, index) => {
             const dot = document.createElement('div');
             dot.classList.add('dot');
-            if (index === this.currentImageIndex) {
+            if (index === this.currentimagesIndex) {
                 dot.classList.add('active');
             }
             dot.addEventListener('click', () => {
                 this.stopSlider(); // Stop auto slide on manual navigation
-                this.showImage(index);
+                this.showimages(index);
                 // Don't restart slider immediately after manual click for better user control
                 this.startSlider(); // Restart auto slide
             });
@@ -158,7 +158,7 @@ class HeroComponent extends HTMLElement {
     updateDots() {
         const dots = this.shadowRoot.querySelectorAll('.dot');
         dots.forEach((dot, index) => {
-            if (index === this.currentImageIndex) {
+            if (index === this.currentimagesIndex) {
                 dot.classList.add('active');
             } else {
                 dot.classList.remove('active');
@@ -166,24 +166,24 @@ class HeroComponent extends HTMLElement {
         });
     }
 
-    showImage(index) {
+    showimages(index) {
         const sliderContainer = this.shadowRoot.querySelector('.slider-container');
-        const imageWidth = this.shadowRoot.querySelector('.slider-container img').clientWidth;
+        const imagesWidth = this.shadowRoot.querySelector('.slider-container img').clientWidth;
         
-        // Calculate the amount to translate based on the image index and width
-        sliderContainer.style.transform = `translateX(${-index * imageWidth}px)`;
+        // Calculate the amount to translate based on the images index and width
+        sliderContainer.style.transform = `translateX(${-index * imagesWidth}px)`;
 
-        this.currentImageIndex = index;
-        this.updateDots(); // Update dots after image change
+        this.currentimagesIndex = index;
+        this.updateDots(); // Update dots after images change
     }
 
     startSlider() {
          // Clear any existing interval before starting a new one
         this.stopSlider(); 
         this.sliderInterval = setInterval(() => {
-            const nextIndex = (this.currentImageIndex + 1) % this.images.length;
-            this.showImage(nextIndex);
-        }, 3000); // Change image every 3 seconds
+            const nextIndex = (this.currentimagesIndex + 1) % this.images.length;
+            this.showimages(nextIndex);
+        }, 3000); // Change images every 3 seconds
     }
 
     stopSlider() {
