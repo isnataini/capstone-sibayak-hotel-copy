@@ -2,7 +2,7 @@ class BookingComponent extends HTMLElement {
   connectedCallback() {
     const selectedRoom = JSON.parse(localStorage.getItem('selectedRoom')) || {
       name: 'Twin Room',
-      image: 'assets/image/Twin Room.jpg',
+      images: 'assets/images/Twin Room.jpg',
       price: 'Rp 300.000'
     };
 
@@ -29,7 +29,7 @@ class BookingComponent extends HTMLElement {
           </div>
         </div>
         <div class="summary-section">
-          <img src="${selectedRoom.image}" alt="${selectedRoom.name}" class="room-image">
+          <img src="${selectedRoom.images}" alt="${selectedRoom.name}" class="room-images">
           <h3>${selectedRoom.name}</h3>
           <p><strong>Price Details</strong></p>
           <p class="price">${selectedRoom.price}/night</p>
@@ -68,7 +68,7 @@ class BookingComponent extends HTMLElement {
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       }
 
-      .room-image {
+      .room-images {
         width: 100%;
         object-fit: contain;
         border-radius: 8px;
