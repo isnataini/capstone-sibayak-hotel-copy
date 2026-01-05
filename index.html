@@ -1,52 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="stylesheet" href="assets/styles/global.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
-    <title>Sibayak Multi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Sibayak Multi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/styles/styles.css">
 </head>
+
 <body>
-    <header-component></header-component>
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <sidebar-component></sidebar-component>
 
-    <main>
-        <hero-component></hero-component>
+    <!-- Main Content -->
+    <main class="flex-1 p-8 mt-6">
+      <!-- Top bar -->
+      <topbar-component title="Hotel Activities"></topbar-component>
 
-        <h2 class="part-1" id="about">About Us</h2>
+      <!-- Container -->
+      <div class="container bg-white p-6 rounded">
+        <!-- Cards -->
+        <div class="grid grid-cols-2 gap-4 mb-8">
+          <stat-card value=150 label="New Booking"></stat-card>
+          <stat-card value=300 label="Total Guest"></stat-card>
+        </div>
 
-        <section class="home">
-            <aside>
-                <figure>
-                    <img src="assets/image/Home.jpg" alt="">
-                </figure>
-            </aside>
-            
-            <article>
-                <section class="description">
-                    <h2>The Best Holiday Start Here!</h2>
-                    <p>
-                        With a focus on quality accommodations, personalized experiences, and seamless booking, our platform is dedicated to ensuring that every traveler embarks on their dream holiday with confidence and excitement.
-                    </p>
-                </section>
-            </article>
-        </section>
+        <!-- Top Selected Package -->
+        <h2 class="text-lg font-semibold mb-4">Top Selected Room</h2>
+        <div class="bg-white p-6 rounded shadow">
+          <p class="text-gray-500 mb-6 text-sm">In last 30 days top selected room</p>
 
-        <h2 class="part-2" id="room">Rooms</h2>
-        <room-component></room-component>
+          <!-- Bar 1 -->
+          <div class="mb-4">
+            <div class="flex justify-between mb-1">
+              <span>Deluxe Room</span><span class="text-sm text-gray-500">85%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div class="bg-blue-500 h-2.5 rounded-full" style="width: 85%"></div>
+            </div>
+          </div>
 
-        <h2 class="part-3" id="service">Service</h2>
-        <service-component></service-component>
+          <!-- Bar 2 -->
+          <div class="mb-4">
+            <div class="flex justify-between mb-1">
+              <span>Executive Suite</span><span class="text-sm text-gray-500">76%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div class="bg-blue-500 h-2.5 rounded-full" style="width: 76%"></div>
+            </div>
+          </div>
+
+          <!-- Bar 3 -->
+          <div class="mb-2">
+            <div class="flex justify-between mb-1">
+              <span>Family Room</span><span class="text-sm text-gray-500">60%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div class="bg-blue-500 h-2.5 rounded-full" style="width: 60%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
+  </div>
 
-    <footer-component></footer-component>
-
-    <!-- Load Web Components -->
-    <script src="assets/components/header-component.js"></script>
-    <script src="assets/components/hero-component.js"></script>
-    <script src="assets/components/room-component.js"></script>
-    <script src="assets/components/service-component.js"></script>
-    <script src="assets/components/footer-component.js"></script>
 </body>
+<!-- Layout -->
+ <script src="../assets/components/sidebar.js"></script>
+ <script src="../assets/components/stat-card.js"></script>
+ <script src="../assets/components/topbar-component.js"></script>
+
 </html>
