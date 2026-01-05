@@ -94,7 +94,7 @@ class ServiceComponent extends HTMLElement {
                 <div class="service-box">
                     <aside>
                         <figure>
-                            <img src="../assets/image/Service.png" alt="Hotel Services">
+                            <img src="assets/images/Service.png" alt="Hotel Services">
                         </figure>
                     </aside>
                     <article>
